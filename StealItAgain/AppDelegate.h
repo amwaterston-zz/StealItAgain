@@ -7,9 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#include "psmove.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+    PSMove *moves[6];
+    
+    NSMutableArray *moveArray;
+    int controllers_connected;
+}
 
 @property (assign) IBOutlet NSWindow *window;
+- (IBAction)tappity:(id)sender;
 
 @end

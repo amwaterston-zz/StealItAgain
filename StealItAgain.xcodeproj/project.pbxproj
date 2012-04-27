@@ -13,6 +13,8 @@
 		B7F5B102154B57AC000A114F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B100154B57AC000A114F /* Credits.rtf */; };
 		B7F5B105154B57AC000A114F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B104154B57AC000A114F /* AppDelegate.m */; };
 		B7F5B108154B57AC000A114F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B106154B57AC000A114F /* MainMenu.xib */; };
+		B7F5B113154B5CFB000A114F /* libpsmoveapi.1.0.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F5B111154B5CFB000A114F /* libpsmoveapi.1.0.2.dylib */; };
+		B7F5B114154B6184000A114F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F5B0F6154B57AC000A114F /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +23,16 @@
 		B7F5B0F4154B57AC000A114F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		B7F5B0F5154B57AC000A114F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B7F5B0F6154B57AC000A114F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B7F5B0F9154B57AC000A114F /* StealItAgain-Info.plist */ = {isa = PBXFileReference; path = "StealItAgain-Info.plist"; sourceTree = "<group>"; };
+		B7F5B0F9154B57AC000A114F /* StealItAgain-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StealItAgain-Info.plist"; sourceTree = "<group>"; };
 		B7F5B0FB154B57AC000A114F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B7F5B0FD154B57AC000A114F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B7F5B0FF154B57AC000A114F /* StealItAgain-Prefix.pch */ = {isa = PBXFileReference; path = "StealItAgain-Prefix.pch"; sourceTree = "<group>"; };
+		B7F5B0FF154B57AC000A114F /* StealItAgain-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StealItAgain-Prefix.pch"; sourceTree = "<group>"; };
 		B7F5B101154B57AC000A114F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		B7F5B103154B57AC000A114F /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		B7F5B103154B57AC000A114F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B7F5B104154B57AC000A114F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B7F5B107154B57AC000A114F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B7F5B111154B5CFB000A114F /* libpsmoveapi.1.0.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libpsmoveapi.1.0.2.dylib; sourceTree = "<group>"; };
+		B7F5B112154B5CFB000A114F /* psmove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psmove.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +40,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7F5B114154B6184000A114F /* Foundation.framework in Frameworks */,
 				B7F5B0F2154B57AC000A114F /* Cocoa.framework in Frameworks */,
+				B7F5B113154B5CFB000A114F /* libpsmoveapi.1.0.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +88,8 @@
 		B7F5B0F7154B57AC000A114F /* StealItAgain */ = {
 			isa = PBXGroup;
 			children = (
+				B7F5B111154B5CFB000A114F /* libpsmoveapi.1.0.2.dylib */,
+				B7F5B112154B5CFB000A114F /* psmove.h */,
 				B7F5B103154B57AC000A114F /* AppDelegate.h */,
 				B7F5B104154B57AC000A114F /* AppDelegate.m */,
 				B7F5B106154B57AC000A114F /* MainMenu.xib */,
@@ -252,6 +260,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StealItAgain/StealItAgain-Prefix.pch";
 				INFOPLIST_FILE = "StealItAgain/StealItAgain-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/StealItAgain\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -263,6 +275,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StealItAgain/StealItAgain-Prefix.pch";
 				INFOPLIST_FILE = "StealItAgain/StealItAgain-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/StealItAgain\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
