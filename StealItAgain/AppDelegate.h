@@ -9,8 +9,9 @@
 #import <Cocoa/Cocoa.h>
 #include "psmove.h"
 #import "dataDAO.h"
+#import "RequestCompleted.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource, RequestCompleted> {
     
     NSMutableArray *moveArray;
     int controllers_connected;

@@ -15,6 +15,7 @@
 
 @implementation Request
 
+@synthesize delegate;
 @synthesize poet;
 @synthesize animal;
 @synthesize venue;
@@ -24,19 +25,21 @@
 @synthesize rewardAmount;
 @synthesize requestStartDate;
 @synthesize requestDuration;
-@synthesize requestFinished;
+@synthesize requestCompleted;
+@synthesize requestFailed;
 
 - (id)init {
     self = [super init];
     if (self) {
         requestDuration = kDefaultRequestDuration;
         requestStartDate = [[NSDate date] retain];
+        [NSTimer scheduledTimerWithTimeInterval:requestDuration target:self selector:@selector(failRequest) userInfo:nil repeats:NO];
     }
     return self;
 }
 
 - (NSString*)theRequest {
-    if (!requestFinished)
+    if (!self.requestFinished)
         return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
     else {
         return [NSString stringWithFormat:@"%@ the %@ is SO HAPPY. Now you can pay for %@", poet, animal, rewardText];
@@ -49,9 +52,25 @@
 }
 
 - (NSString*)timeRemainingAsString {
+    if (self.requestFinished) {
+        return @"Request Finished";
+    }
     return [NSString stringWithFormat:@"%02.0f seconds remaining", [self timeRemaining]];
 }
 
+- (void)failRequest {
+    requestFailed = YES;
+    [delegate requestFinished:self];
+}
+
+- (void)completeRequest {
+    requestCompleted = YES;
+    [delegate requestFinished:self];
+}
+
+- (BOOL)requestFinished {
+    return requestCompleted || requestFailed;
+}
 
 +(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name {
     Request *request = [[Request alloc] init];

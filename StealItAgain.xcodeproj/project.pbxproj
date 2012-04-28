@@ -147,6 +147,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047C6085154C109E00621DE6 /* RequestCompleted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCompleted.h; sourceTree = "<group>"; };
 		04FA31FB154BDD3E0097A0B8 /* SomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeCell.h; sourceTree = "<group>"; };
 		04FA31FC154BDD3E0097A0B8 /* SomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeCell.m; sourceTree = "<group>"; };
 		04FA3200154BE6290097A0B8 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Request.h; path = Models/Request.h; sourceTree = "<group>"; };
@@ -506,6 +507,7 @@
 		B7F5B0F7154B57AC000A114F /* StealItAgain */ = {
 			isa = PBXGroup;
 			children = (
+				047C6085154C109E00621DE6 /* RequestCompleted.h */,
 				04FA3203154BEB0C0097A0B8 /* Images */,
 				04FA31FF154BE5370097A0B8 /* Model */,
 				B7F5B11D154B7140000A114F /* EGO */,

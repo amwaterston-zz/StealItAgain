@@ -67,8 +67,7 @@
 {
     Building *b = [buildings objectAtIndex:controller];
     Request *r = [b request];
-    r.requestFinished = YES;
-    [tableView reloadData];
+    [r failRequest];
 }
 
 - (void) poll {
@@ -121,6 +120,7 @@
     NSString *identifier = [aTableColumn identifier];
     
     Building *building = [buildings objectAtIndex:row];
+    building.request.delegate = self;
 
     if ([identifier isEqualToString:@"Request"]) {
 
@@ -147,5 +147,10 @@
     
     return nil;
 }
+
+- (void)requestFinished:(Request*)request {
+    [tableView reloadData];
+}
+
 
 @end
