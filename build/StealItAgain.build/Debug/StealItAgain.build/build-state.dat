@@ -1,244 +1,0 @@
-TStealItAgain
-v5
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Info.plist StealItAgain/StealItAgain-Info.plist
-cProcessPCH /var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch.pth StealItAgain/StealItAgain-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/main.o /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/AppDelegate.o /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/MacOS/StealItAgain normal x86_64
-cCompileXIB /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/MainMenu.xib
-cCopyStringsFile /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj/InfoPlist.strings StealItAgain/en.lproj/InfoPlist.strings
-cCpResource StealItAgain/en.lproj/Credits.rtf build/Debug/StealItAgain.app/Contents/Resources/en.lproj/Credits.rtf
-cTouch /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
-c000000004F29C61A00000000000000EE
-t1328137754
-s238
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
-c000000004F9316210000000000002470
-t1335039521
-s9328
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004F93162200000000000ADFFC
-t1335039522
-s712700
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.h
-c000000004F9B29A500000000000001B7
-t1335568805
-s439
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.m
-c000000004F9B2D0900000000000006C5
-t1335569673
-s1733
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/StealItAgain-Prefix.pch
-c000000004F9B202C000000000000009B
-t1335566380
-s155
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/ViewController.m
-c000000004F9B24CD00000000000001F4
-t1335567565
-s500
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/Credits.rtf
-c000000004F9B202C00000000000001B4
-t1335566380
-s436
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/InfoPlist.strings
-c000000004F9B202C000000000000002D
-t1335566380
-s45
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/MainMenu.xib
-c000000004F9B25550000000000023930
-t1335567701
-s145712
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/libpsmoveapi.1.0.2.dylib
-c000000004F5A1E25000000000000C1C8
-t1331306021
-s49608
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/main.m
-c000000004F9B202C000000000000010E
-t1335566380
-s270
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/psmove.h
-c000000004F5A1B1A0000000000002686
-t1331305242
-s9862
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app
-t1335569613
-s102
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Info.plist
-t1335566741
-s1443
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/MacOS/StealItAgain
-t1335569613
-s16100
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/PkgInfo
-t1335566741
-s8
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj/Credits.rtf
-t1335566744
-s436
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj/InfoPlist.strings
-t1335566744
-s92
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj/MainMenu.nib
-t1335567706
-s28077
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/AppDelegate.o
-t1335569613
-s29996
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/StealItAgain.LinkFileList
-c000000004F9B2195000000000000010F
-t1335566741
-s271
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/ViewController.o
-t2
-s0
-
-N/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/main.o
-t1335566743
-s2784
-
-N/var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch.pth
-t1335566742
-s11499192
-
-NStealItAgain/StealItAgain-Info.plist
-c000000004F9B202C000000000000045B
-t1335566380
-s1115
-
-CBuild AST from /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.m
-r0
-
-CBuild AST from /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/ViewController.m
-r0
-
-CBuild AST from /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/main.m
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesaa47ea8a644bb541^6aa3ea8a644bb541^---0#1#0#--18"Check dependencies36"470E4E02-798B-476E-9D7B-CFC3E6202214-
-
-CCompileC build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/AppDelegate.o /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s357262474.942835
-e357262475.025550
-r1
-xCompileC
-xbuild/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/AppDelegate.o
-x/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.m
-xnormal
-xx86_64
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.me887f18a644bb541^aa470a8b644bb541^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.m0000000000000000^3055"CompileC build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/AppDelegate.o StealItAgain/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/alexwaterston/Documents/Projects/StealItAgain    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.7 -g -Wno-conversion -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-generated-files.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-own-target-headers.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-all-target-headers.hmap -iquote /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-project-headers.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/include -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/DerivedSources/x86_64 -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/DerivedSources -F/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug -include /var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch -MMD -MT dependencies -MF /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/AppDelegate.d --serialize-diagnostics /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/AppDelegate.dia -c /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/AppDelegate.m -o /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/AppDelegate.o36"E3ADE584-5478-4E07-B0DD-F53D75DF3B8E-
-
-CCompileC build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/ViewController.o /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/ViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/main.o /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s357259542.862687
-e357259543.273889
-r1
-xCompileC
-xbuild/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/main.o
-x/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/main.m
-xnormal
-xx86_64
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/main.mf704dd16594bb541^cb304617594bb541^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/main.m0000000000000000^3013"CompileC build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/main.o StealItAgain/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/alexwaterston/Documents/Projects/StealItAgain    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.7 -g -Wno-conversion -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-generated-files.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-own-target-headers.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-all-target-headers.hmap -iquote /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-project-headers.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/include -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/DerivedSources/x86_64 -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/DerivedSources -F/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug -include /var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch -MMD -MT dependencies -MF /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/main.dia -c /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/main.m -o /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/main.o36"58FC8FB3-CC52-4B2D-A1AF-B67A8B9450CE-
-
-CCompileXIB /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/MainMenu.xib
-s357260502.586509
-e357260506.966315
-r1
-xCompileXIB
-x/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/MainMenu.xib
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compiling /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/MainMenu.xib6d3a96d65c4bb541^1b63f7da5c4bb541^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/MainMenu.xib0000000000000000^650"CompileXIB StealItAgain/en.lproj/MainMenu.xib    cd /Users/alexwaterston/Documents/Projects/StealItAgain    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj/MainMenu.nib /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/MainMenu.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk36"698CC2FD-7E89-4B26-B989-6AE3E010015B-
-
-CCopyStringsFile /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj/InfoPlist.strings StealItAgain/en.lproj/InfoPlist.strings
-s357259544.441001
-e357259544.455434
-r1
-xCopyStringsFile
-x/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj/InfoPlist.strings
-xStealItAgain/en.lproj/InfoPlist.strings
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy StealItAgain/en.lproj/InfoPlist.strings92087118594bb541^40a37418594bb541^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/InfoPlist.strings0000000000000000^434"CopyStringsFile build/Debug/StealItAgain.app/Contents/Resources/en.lproj/InfoPlist.strings StealItAgain/en.lproj/InfoPlist.strings    cd /Users/alexwaterston/Documents/Projects/StealItAgain    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding UTF-16 --outdir /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj -- StealItAgain/en.lproj/InfoPlist.strings36"66452979-6EDB-4106-9B5D-48DEB135B63A-
-
-CCpResource StealItAgain/en.lproj/Credits.rtf build/Debug/StealItAgain.app/Contents/Resources/en.lproj/Credits.rtf
-s357259544.443068
-e357259544.454673
-r1
-xCpResource
-xStealItAgain/en.lproj/Credits.rtf
-xbuild/Debug/StealItAgain.app/Contents/Resources/en.lproj/Credits.rtf
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Copy build/Debug/StealItAgain.app/Contents/Resources/en.lproj/Credits.rtf3c847118594bb541^41657418594bb541^---0#0#0#-19%DVTDocumentLocation2@137"file://localhost/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj/Credits.rtf000000000080d041^588"CpResource StealItAgain/en.lproj/Credits.rtf build/Debug/StealItAgain.app/Contents/Resources/en.lproj/Credits.rtf    cd /Users/alexwaterston/Documents/Projects/StealItAgain    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/en.lproj/Credits.rtf /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Resources/en.lproj36"08DD8747-7420-4AC8-A7C2-4BEBD31AD638-
-
-CLd /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/MacOS/StealItAgain normal x86_64
-s357262475.032368
-e357262475.074484
-r1
-xLd
-x/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/MacOS/StealItAgain
-xnormal
-xx86_64
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Link /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/MacOS/StealItAgain5b5f088b644bb541^f911138b644bb541^---0#0#0#--953"Ld build/Debug/StealItAgain.app/Contents/MacOS/StealItAgain normal x86_64    cd /Users/alexwaterston/Documents/Projects/StealItAgain    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -L/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug -L/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain -F/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug -filelist /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/Objects-normal/x86_64/StealItAgain.LinkFileList -mmacosx-version-min=10.7 -framework Foundation -framework Cocoa -lpsmoveapi.1.0.2 -o /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/MacOS/StealItAgain36"0508CD46-5004-4A60-AB59-745FD1EC5DAC-
-
-CProcessInfoPlistFile /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Info.plist StealItAgain/StealItAgain-Info.plist
-s357259541.819454
-e357259541.837819
-r1
-xProcessInfoPlistFile
-x/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Info.plist
-xStealItAgain/StealItAgain-Info.plist
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Process StealItAgain/StealItAgain-Info.plistbce6d115594bb541^27c1db15594bb541^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/StealItAgain-Info.plist0000000000000000^487"ProcessInfoPlistFile build/Debug/StealItAgain.app/Contents/Info.plist StealItAgain/StealItAgain-Info.plist    cd /Users/alexwaterston/Documents/Projects/StealItAgain    builtin-infoPlistUtility StealItAgain/StealItAgain-Info.plist -genpkginfo /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app/Contents/Info.plist36"139700F9-2880-4D0C-96D0-49FDE5845782-
-
-CProcessPCH /Users/alexwaterston/Library/Developer/Xcode/DerivedData/StealItAgain-bkgkzeuswyhitcerggoicxmtrris/Index/PrecompiledHeaders/StealItAgain-Prefix-fqanrsehzwxqqnapfwswivuiralv_ast/StealItAgain-Prefix.pch.pth StealItAgain/StealItAgain-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH /var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch.pth StealItAgain/StealItAgain-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s357259541.874457
-e357259542.855524
-r1
-xProcessPCH
-x/var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch.pth
-xStealItAgain/StealItAgain-Prefix.pch
-xnormal
-xx86_64
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Precompile StealItAgain/StealItAgain-Prefix.pch058ae015594bb541^5c03db16594bb541^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/StealItAgain-Prefix.pch0000000000000000^3085"ProcessPCH /var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch.pth StealItAgain/StealItAgain-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/alexwaterston/Documents/Projects/StealItAgain    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.7 -g -Wno-conversion -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-generated-files.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-own-target-headers.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-all-target-headers.hmap -iquote /Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/StealItAgain-project-headers.hmap -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/include -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/DerivedSources/x86_64 -I/Users/alexwaterston/Documents/Projects/StealItAgain/build/StealItAgain.build/Debug/StealItAgain.build/DerivedSources -F/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug --serialize-diagnostics /var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch.dia -c /Users/alexwaterston/Documents/Projects/StealItAgain/StealItAgain/StealItAgain-Prefix.pch -o /var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/nn/sm0t07g93vvfcwfqv9_17bgm0000gq/C/com.apple.Xcode.503/SharedPrecompiledHeaders/StealItAgain-Prefix-etuzwhlhgjwqkxfdeaifiogftlus/StealItAgain-Prefix.pch.d36"8186BBF9-506C-4052-A136-D314BA074641-
-
-CTouch /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app
-s357262475.091455
-e357262475.095967
-r1
-xTouch
-x/Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Touch /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.appc576178b644bb541^0492188b644bb541^---0#0#0#--199"Touch build/Debug/StealItAgain.app    cd /Users/alexwaterston/Documents/Projects/StealItAgain    /usr/bin/touch -c /Users/alexwaterston/Documents/Projects/StealItAgain/build/Debug/StealItAgain.app36"9E1A8067-224F-4D7A-AFBE-BF39EEEC8C6A-
-
