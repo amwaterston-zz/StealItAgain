@@ -8,6 +8,8 @@
 
 #import "Request.h"
 #import "dataDAO.h"
+#import "Item.h"
+#import "Reward.h"
 
 @implementation Request
 
@@ -20,17 +22,19 @@
 @synthesize rewardAmount;
 
 - (NSString*)theRequest {
-    return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
+    return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in %@ for %d", poet, animal, item, venue, rewardAmount];
 }
 
-+(Request*)loadRandomRequest:(DataDAO *)data {
++(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name {
     Request *request = [[Request alloc] init];
     request.poet = [data getRandomPoet];
     request.animal = [data getRandomAnimal];
-    request.item = @"Ming Vase";
-    request.venue = @"Underbelly";
-    request.rewardAmount = 42;
-    request.imageName = @"p0000033234";
+    Item *i = [data getRandomItem];
+    request.item = i.name;
+    request.venue = name;
+    request.imageName = i.filename;
+    Reward *r = [data getRandomReward];
+    request.rewardAmount = r.value;
     return [request autorelease];
 }
 

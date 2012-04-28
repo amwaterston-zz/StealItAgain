@@ -97,7 +97,7 @@
 
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         // Then setup properties on the cellView based on the column
-        cellView.textField.stringValue = [building.request theRequest];;
+        cellView.textField.stringValue = [[building request:data] theRequest];
         //cellView.imageView.objectValue = [dictionary objectForKey:@"Image"];
         return cellView;
     } else if ([identifier isEqualToString:@"Building"]) {

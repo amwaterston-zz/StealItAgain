@@ -9,6 +9,7 @@
 #import "DataDAO.h"
 #import "Building.h"
 #import "Item.h"
+#import "Reward.h"
 
 @implementation DataDAO
 
@@ -118,11 +119,14 @@ return buildingList;
     return [item autorelease];
 }
 
-- (NSString *) getRandomReward {
-    EGODatabaseResult* result = [database executeQuery:@"Select common_name from animals ORDER BY random() LIMIT 1"];
+- (Reward *) getRandomReward {
+    EGODatabaseResult* result = [database executeQuery:@"Select award_made, short_description from creative ORDER BY random() LIMIT 1"];
     
     EGODatabaseRow *first = [result.rows objectAtIndex:0];
-    return [first stringForColumnIndex:0];
+    Reward *reward = [Reward alloc];
+    reward.value = [first intForColumnIndex:0];
+    reward.description = [first stringForColumnIndex:1];
+    return [reward autorelease];
 }
 
 @end

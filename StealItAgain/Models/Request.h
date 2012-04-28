@@ -20,7 +20,7 @@
 @property (nonatomic, assign) int rewardAmount;
 
 
-+(Request*)loadRandomRequest:(DataDAO*)data;
++(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name;
 
 - (NSString*)theRequest;
 

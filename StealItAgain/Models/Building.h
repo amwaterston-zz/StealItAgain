@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Request.h"
+#import "DataDAO.h"
 
 @interface Building : NSObject
 
@@ -21,5 +22,6 @@
 - (void)completeRequest;
 + (Building*)loadDummyBuilding;
 - (double)powerForT:(NSInteger)t;
+- (Request*)request:(DataDAO *)data;
 
 @end

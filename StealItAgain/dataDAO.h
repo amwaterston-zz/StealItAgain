@@ -10,7 +10,7 @@
 #import "EGODatabase.h"
 #import <CoreLocation/CoreLocation.h>
 
-@class Item;
+@class Item, Reward;
 @interface DataDAO : NSObject 
 {
 	EGODatabase *database;
@@ -22,6 +22,7 @@
 - (NSString *) getRandomAnimal;
 - (NSString *) getRandomPoet;
 - (Item *) getRandomItem;
-- (NSString *) getRandomReward;
+- (Reward *) getRandomReward;
+
 
 @end

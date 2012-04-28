@@ -28,9 +28,9 @@
     return [[power objectAtIndex:t] doubleValue];
 }
 
-- (Request*)request {
+- (Request*)request:(DataDAO *)data {
     if (request == nil) {
-        request = [[Request loadRandomRequest] retain];
+        request = [[Request loadRandomRequest:data withBuilding:buildingName] retain];
     }
     return request;
 }
