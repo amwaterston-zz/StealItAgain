@@ -201,7 +201,11 @@
         return cellView;
     } else if ([identifier isEqualToString:@"Picture"]) {
         NSTableCellView *pictureCell = [tableView makeViewWithIdentifier:identifier owner:self];
-        pictureCell.imageView.objectValue = [NSImage imageNamed:building.request.imageName];
+        if (building.police) {
+            pictureCell.imageView.objectValue = [NSImage imageNamed:@"police"];
+        } else {
+            pictureCell.imageView.objectValue = [NSImage imageNamed:building.request.imageName];
+        }
         return pictureCell;
     } else if ([identifier isEqualToString:@"Reward"]) {
         NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
