@@ -185,7 +185,7 @@
 
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         // Then setup properties on the cellView based on the column
-        cellView.textField.stringValue = [[building request:data] theRequest];
+        cellView.textField.stringValue = [building.request theRequest];
         //cellView.imageView.objectValue = [dictionary objectForKey:@"Image"];
         return cellView;
     } else if ([identifier isEqualToString:@"Building"]) {
@@ -208,7 +208,7 @@
         return timeCell;
     } else if ([identifier isEqualToString:@"Time"]) {
         NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
-        timeCell.textField.stringValue = building.request.timeRemainingAsString;
+        timeCell.textField.stringValue = building.request.timeString;
         return timeCell;
     }
     

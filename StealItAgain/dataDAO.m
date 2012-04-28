@@ -15,6 +15,15 @@
 
 @synthesize database;
 
+static DataDAO *sharedDataDAO;
+
++(DataDAO*)sharedDataDAO {
+    if (!sharedDataDAO) {
+        sharedDataDAO = [[DataDAO alloc] init];
+    }
+    return sharedDataDAO;
+}
+
 -(id)init {
 	if ((self = [super init])) {
 		database = [[EGODatabase alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"datas" ofType:@""]];
