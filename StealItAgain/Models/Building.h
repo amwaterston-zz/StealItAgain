@@ -25,7 +25,6 @@
 - (void)completeRequest;
 + (Building*)loadDummyBuilding;
 - (double)powerForT:(NSInteger)t;
-- (Request*)request:(DataDAO *)data;
 
 - (NSString*)policeArrivalTimeAsString;
 

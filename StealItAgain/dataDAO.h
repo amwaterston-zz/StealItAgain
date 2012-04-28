@@ -16,6 +16,8 @@
 	EGODatabase *database;
 }
 
++(DataDAO*)sharedDataDAO;
+
 @property (nonatomic, readonly) EGODatabase *database; 
 
 - (NSArray *) getBuildings;

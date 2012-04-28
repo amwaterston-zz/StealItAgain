@@ -10,12 +10,13 @@
 #import "RequestCompleted.h"
 
 @class DataDAO;
+@class Building;
 @interface Request : NSObject
 
 @property (nonatomic, assign) NSObject<RequestCompleted> *delegate;
 @property (nonatomic, retain) NSString* poet;
 @property (nonatomic, retain) NSString* animal;
-@property (nonatomic, retain) NSString* venue;
+@property (nonatomic, assign) Building* venue;
 @property (nonatomic, retain) NSString* item;
 @property (nonatomic, retain) NSString* imageName;
 @property (nonatomic, retain) NSString* rewardText;
@@ -26,12 +27,15 @@
 @property (nonatomic, assign, readonly) BOOL requestFailed;
 @property (nonatomic, assign, readonly) BOOL requestFinished;
 
-+(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name;
++(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(Building *)building;
 
 - (NSString*)theRequest;
 
 - (NSTimeInterval)timeRemaining;
 - (NSString*)timeRemainingAsString;
+
+- (NSString*)timeString;
+
 
 - (void)failRequest;
 - (void)completeRequest;

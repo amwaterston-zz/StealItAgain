@@ -11,8 +11,18 @@
 #import "Item.h"
 #import "Reward.h"
 #import "Player.h"
+#import "Building.h"
 
-#define kDefaultRequestDuration 30.0
+#define kDefaultRequestDuration 10.0
+#define kRespawnTimeInterval 10.0
+
+@interface Request ()
+
+@property (nonatomic, retain) NSTimer *failTimer;
+@property (nonatomic, assign) NSTimeInterval respawnInterval;
+@property (nonatomic, retain) NSDate *respawnRequestedAt;
+
+@end
 
 @implementation Request
 
@@ -28,20 +38,24 @@
 @synthesize requestDuration;
 @synthesize requestCompleted;
 @synthesize requestFailed;
+@synthesize failTimer;
+@synthesize respawnInterval;
+@synthesize respawnRequestedAt;
 
 - (id)init {
     self = [super init];
     if (self) {
         requestDuration = kDefaultRequestDuration;
+        respawnInterval = kRespawnTimeInterval;
         requestStartDate = [[NSDate date] retain];
-        [NSTimer scheduledTimerWithTimeInterval:requestDuration target:self selector:@selector(failRequest) userInfo:nil repeats:NO];
+        failTimer = [[NSTimer scheduledTimerWithTimeInterval:requestDuration target:self selector:@selector(failRequest) userInfo:nil repeats:NO] retain];
     }
     return self;
 }
 
 - (NSString*)theRequest {
     if (!self.requestCompleted)
-        return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
+        return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue.buildingName, rewardAmount];
     else {
         return [NSString stringWithFormat:@"%@ the %@ is SO HAPPY. Now you can pay for %@", poet, animal, rewardText];
     }
@@ -62,9 +76,35 @@
     return [NSString stringWithFormat:@"%02.0f seconds remaining", [self timeRemaining]];
 }
 
+- (NSTimeInterval)timeUntilRespawn {
+    return respawnInterval - [[NSDate date] timeIntervalSinceDate:respawnRequestedAt];
+}
+
+- (NSString*)timeUntilRespawnAsString {
+    return [NSString stringWithFormat:@"%02.0f seconds until new request available", [self timeUntilRespawn]];
+}
+
+- (NSString*)timeString {
+    NSString *timeString = self.timeRemainingAsString;
+    if (respawnRequestedAt) {
+        timeString = [NSString stringWithFormat:@"%@\n%@", timeString, [self timeUntilRespawnAsString]];
+    }
+    return timeString;
+}
+
+- (void)scheduleRespawn {
+    self.respawnRequestedAt = [NSDate date];
+    [failTimer invalidate];
+    self.failTimer = nil;
+    [NSTimer scheduledTimerWithTimeInterval:respawnInterval target:venue selector:@selector(respawnRequest) userInfo:nil repeats:NO];
+}
+
 - (void)failRequest {
-    requestFailed = YES;
-    [delegate requestFinished:self];
+    if (!requestFailed) {
+        requestFailed = YES;
+        [delegate requestFinished:self];
+        [self scheduleRespawn];
+    }
 }
 
 - (void)completeRequest {
@@ -73,6 +113,7 @@
         [Player sharedPlayer].funding = rewardAmount + [Player sharedPlayer].funding;
         requestCompleted = YES;
         [delegate requestFinished:self];
+        [self scheduleRespawn];
     }
 }
 
@@ -80,13 +121,13 @@
     return requestCompleted || requestFailed;
 }
 
-+(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name {
++(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(Building *)building {
     Request *request = [[Request alloc] init];
     request.poet = [data getRandomPoet];
     request.animal = [data getRandomAnimal];
     Item *i = [data getRandomItem];
     request.item = i.name;
-    request.venue = name;
+    request.venue = building;
     request.imageName = i.filename;
     Reward *r = [data getRandomReward];
     request.rewardAmount = r.value;

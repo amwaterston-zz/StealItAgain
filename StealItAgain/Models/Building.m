@@ -31,9 +31,9 @@
     return [[power objectAtIndex:t] doubleValue];
 }
 
-- (Request*)request:(DataDAO *)data {
+- (Request*)request {
     if (request == nil) {
-        request = [[Request loadRandomRequest:data withBuilding:buildingName] retain];
+        request = [[Request loadRandomRequest:[DataDAO sharedDataDAO] withBuilding:self] retain];
     }
     return request;
 }
@@ -48,6 +48,9 @@
     }
 }
 
+- (void)respawnRequest {
+    self.request = nil;
+}
 
 + (Building*)loadDummyBuilding {
     Building *building = [[Building alloc] init];
