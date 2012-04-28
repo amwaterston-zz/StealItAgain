@@ -119,7 +119,7 @@
     
     if (timeRemaining <= 0.0f) {
         [winLoseScreen setHidden:NO];
-        [winLoseText setStringValue:[NSString stringWithFormat:@"TIME IS UP. YOU GOT £%d OF FUNDING. SCORE", timeRemaining]];
+        [winLoseText setStringValue:[NSString stringWithFormat:@"TIME IS UP. YOU GOT £%d OF FUNDING. SCORE", [[Player sharedPlayer] funding]]];
         [pollTimer invalidate];
         [globeTimer invalidate];
         return;
