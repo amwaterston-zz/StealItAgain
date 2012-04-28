@@ -37,7 +37,7 @@
     }
     nextPoliceBuilding.policeArrivalTime = 10.0f;
     nextPoliceBuilding.policeComing = YES;
-    NSLog(@"police move");
+    NSLog(@"police moving to %@", nextPoliceBuilding.buildingName);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -78,7 +78,7 @@
 //    [NSTimer scheduledTimerWithTimeInterval:0.5f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerFundingChanged) name:kPlayerFundingChanged object:nil];
-    [self tappity:nil];
+    //[self tappity:nil];
 }
 
 - (void) grabit:(NSInteger)controller
@@ -139,6 +139,7 @@
                 b.police = YES;
                 b.policeComing = NO;
                 currentPoliceBuilding.police = NO;
+                currentPoliceBuilding.policeComing = NO;
                 currentPoliceBuilding = b;
                 [self movePolice];
             }
@@ -162,7 +163,7 @@
 }
 
 - (void)playerFundingChanged {
-    fundingTextField.stringValue = [NSString stringWithFormat:@"Your Funding Total: %d", [[Player sharedPlayer] funding]];
+    fundingTextField.stringValue = [NSString stringWithFormat:@"Your Funding Total: £%d", [[Player sharedPlayer] funding]];
 }
 
 #pragma mark - TableView
