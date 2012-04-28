@@ -17,7 +17,10 @@
 
 @implementation AppDelegate
 
+@synthesize timerText;
 @synthesize window = _window;
+@synthesize winLoseScreen;
+@synthesize winLoseText;
 @synthesize tableView;
 @synthesize fundingTextField;
 
@@ -66,8 +69,9 @@
     
     [self movePolice];
     
-    [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
-    [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(poll) userInfo:nil repeats:YES];
+    timeRemaining = 180.0;
+    globeTimer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
+    pollTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(poll) userInfo:nil repeats:YES];
 	viewLoaded = YES;
     tableView.rowHeight = 140;
     [tableView reloadData];
@@ -82,6 +86,10 @@
     Building *b = [buildings objectAtIndex:controller];
     if (b.police) {
         //GAME OVER
+        [winLoseScreen setHidden:NO];
+        [winLoseText setStringValue:@"THE POLICE CAUGHT YOU. YOU DOOF"];
+        [pollTimer invalidate];
+        [globeTimer invalidate];
     } else {
         Request *r = [b request];
 	    [r completeRequest];    
@@ -106,6 +114,17 @@
 }
 
 - (IBAction)tappity:(id)sender {
+    timeRemaining -= 0.5f;
+    timerText.stringValue = [NSString stringWithFormat:@"Time Remaining: %02.0f", timeRemaining];
+    
+    if (timeRemaining <= 0.0f) {
+        [winLoseScreen setHidden:NO];
+        [winLoseText setStringValue:[NSString stringWithFormat:@"TIME IS UP. YOU GOT £%d OF FUNDING. SCORE", timeRemaining]];
+        [pollTimer invalidate];
+        [globeTimer invalidate];
+        return;
+    }
+    
     for (int i = 0; i < controllers_connected; i++)
     {
         Building *b = [buildings objectAtIndex:i];
@@ -143,7 +162,7 @@
 }
 
 - (void)playerFundingChanged {
-    fundingTextField.stringValue = [NSString stringWithFormat:@"%d", [[Player sharedPlayer] funding]];
+    fundingTextField.stringValue = [NSString stringWithFormat:@"Your Funding Total: %d", [[Player sharedPlayer] funding]];
 }
 
 #pragma mark - TableView

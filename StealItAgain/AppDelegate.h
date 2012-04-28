@@ -25,9 +25,15 @@
     BOOL viewLoaded;
     
     Building *currentPoliceBuilding;
+    NSTimer *globeTimer;
+    NSTimer *pollTimer;
+    float timeRemaining;
 }
+@property (assign) IBOutlet NSTextField *timerText;
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSView *winLoseScreen;
+@property (assign) IBOutlet NSTextField *winLoseText;
 
 @property (assign) IBOutlet NSTableView *tableView;
 @property (assign) IBOutlet NSTextField *fundingTextField;
