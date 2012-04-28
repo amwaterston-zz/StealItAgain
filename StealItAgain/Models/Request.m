@@ -40,7 +40,7 @@
 }
 
 - (NSString*)theRequest {
-    if (!self.requestFinished)
+    if (!self.requestCompleted)
         return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
     else {
         return [NSString stringWithFormat:@"%@ the %@ is SO HAPPY. Now you can pay for %@", poet, animal, rewardText];
@@ -56,7 +56,7 @@
     if (self.requestFailed) {
         return @"Request Failed";
     }
-    if (self.requestFinished) {
+    if (self.requestCompleted) {
         return @"Request Smashed!";
     }
     return [NSString stringWithFormat:@"%02.0f seconds remaining", [self timeRemaining]];
