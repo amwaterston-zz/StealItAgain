@@ -42,7 +42,7 @@
     [b release];
 
     b = [Building alloc];
-    b.color = [NSColor blueColor];
+    b.color = [NSColor yellowColor];
     b.buildingName = @"Building 3";
     b.power = [self getBuildingPowerFor:b.buildingName up:NO];
     [arrayOfBuildings addObject:b];
@@ -63,14 +63,7 @@
     [b release];
     
     b = [Building alloc];
-    b.color = [NSColor yellowColor];
-    b.buildingName = @"Building 2";
-    b.power = [self getBuildingPowerFor:b.buildingName up:YES];
-    [arrayOfBuildings addObject:b];
-    [b release];
-    
-    b = [Building alloc];
-    b.color = [NSColor purpleColor];
+    b.color = [NSColor whiteColor];
     b.buildingName = @"Building 3";
     b.power = [self getBuildingPowerFor:b.buildingName up:YES];
     [arrayOfBuildings addObject:b];

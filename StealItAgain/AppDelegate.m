@@ -24,6 +24,17 @@
     [super dealloc];
 }
 
+- (void) movePolice {
+    Building *nextPoliceBuilding;
+    nextPoliceBuilding = [buildings objectAtIndex:arc4random() % [buildings count]];
+    while (nextPoliceBuilding == currentPoliceBuilding) {
+        nextPoliceBuilding = [buildings objectAtIndex:arc4random() % [buildings count]];
+    }
+    nextPoliceBuilding.policeArrivalTime = 10.0f;
+    nextPoliceBuilding.policeComing = YES;
+    NSLog(@"police move");
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
@@ -44,31 +55,35 @@
         }
     }
     
-    for (int i = 0; i < controllers_connected; i++)
-    {
-        NSValue *v = [moveArray objectAtIndex:i];
-        PSMove *move = [v pointerValue];
-        psmove_set_leds(move, 255, 0, 0);
-    }
-    
     data = [[DataDAO alloc]init];
     buildings = [[data getBuildings] retain];
     timeT = 0;
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
+    currentPoliceBuilding = [buildings objectAtIndex:arc4random() % [buildings count]];
+    currentPoliceBuilding.police = YES;
+    
+    [self movePolice];
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(poll) userInfo:nil repeats:YES];
 	viewLoaded = YES;
     tableView.rowHeight = 140;
     [tableView reloadData];
     [NSTimer scheduledTimerWithTimeInterval:1.0f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
+    
+    [self tappity:nil];
 }
 
 - (void) grabit:(NSInteger)controller
 {
     Building *b = [buildings objectAtIndex:controller];
-    Request *r = [b request];
-    r.requestFinished = YES;
-    [tableView reloadData];
+    if (b.police) {
+        //GAME OVER
+    } else {
+        Request *r = [b request];
+        r.requestFinished = YES;
+        [tableView reloadData];
+    }
 }
 
 - (void) poll {
@@ -92,10 +107,26 @@
     for (int i = 0; i < controllers_connected; i++)
     {
         Building *b = [buildings objectAtIndex:i];
-        if (!b.request.requestFinished) {
-            PSMove *move;
-            NSValue *v = [moveArray objectAtIndex:i];
-            move = [v pointerValue];
+        
+        PSMove *move;
+        NSValue *v = [moveArray objectAtIndex:i];
+        move = [v pointerValue];
+        
+        if (b.policeComing) {
+            b.policeArrivalTime -= 0.5f;
+            if (b.policeArrivalTime <= 0.0f) {
+                b.police = YES;
+                b.policeComing = NO;
+                currentPoliceBuilding.police = NO;
+                currentPoliceBuilding = b;
+                [self movePolice];
+            }
+        }
+        
+        if (b.police) {
+            psmove_set_leds(move, 0, 0, 255 * (timeT % 2)); //arc4random() % 255, arc4random() % 255);
+            psmove_update_leds(move);
+        } else if (!b.request.requestFinished) {
             //NSLog(@"power: %d", [[b.power objectAtIndex:timeT % [b.power count]] intValue]);
             float r = b.color.redComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
             float g = b.color.greenComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;

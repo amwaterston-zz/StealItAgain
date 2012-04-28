@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #include "psmove.h"
 #import "dataDAO.h"
+#import "Building.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource> {
     
@@ -20,6 +21,8 @@
     
     NSArray *buildings;
     BOOL viewLoaded;
+    
+    Building *currentPoliceBuilding;
 }
 
 @property (assign) IBOutlet NSWindow *window;

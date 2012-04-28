@@ -18,6 +18,9 @@
 @property (nonatomic, retain) NSColor* color;
 @property (nonatomic, retain, readonly) Request* request;
 @property (nonatomic, retain) NSArray* power;
+@property (nonatomic, assign) BOOL police;
+@property (nonatomic, assign) NSTimeInterval policeArrivalTime;
+@property (nonatomic, assign) BOOL policeComing;
 
 - (void)completeRequest;
 + (Building*)loadDummyBuilding;

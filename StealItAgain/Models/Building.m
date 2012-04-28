@@ -19,6 +19,9 @@
 @synthesize color;
 @synthesize request;
 @synthesize power;
+@synthesize police;
+@synthesize policeArrivalTime;
+@synthesize policeComing;
 
 - (void)completeRequest {
     self.request = nil;
