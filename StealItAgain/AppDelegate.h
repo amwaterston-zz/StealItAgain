@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #include "psmove.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource> {
     PSMove *moves[6];
     
     NSMutableArray *moveArray;
@@ -17,6 +17,9 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
+
+@property (assign) IBOutlet NSTableView *tableView;
+
 - (IBAction)tappity:(id)sender;
 
 @end

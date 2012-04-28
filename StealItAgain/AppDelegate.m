@@ -13,6 +13,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize tableView;
 
 - (void)dealloc
 {
@@ -58,4 +59,27 @@
     }
     
 }
+
+#pragma mark - TableView
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
+    return 1;
+}
+
+- (NSView*)tableView:(NSTableView *)aTableView viewForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)row {
+    
+    NSString *identifier = [aTableColumn identifier];
+
+    if ([identifier isEqualToString:@"MainCell"]) {
+
+        NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
+        // Then setup properties on the cellView based on the column
+        cellView.textField.stringValue = @"Go and get the ming vase";
+        //cellView.imageView.objectValue = [dictionary objectForKey:@"Image"];
+        return cellView;
+    }
+    
+    return nil;
+}
+
 @end
