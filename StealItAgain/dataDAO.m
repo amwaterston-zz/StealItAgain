@@ -40,6 +40,7 @@ static DataDAO *sharedDataDAO;
     b.color = [NSColor redColor];
     b.buildingName = @"Building 1";
     b.power = [self getBuildingPowerFor:b.buildingName up:NO];
+    b.buildingName = @"The Adam Building";
     [arrayOfBuildings addObject:b];
     [b release];
     
@@ -47,6 +48,7 @@ static DataDAO *sharedDataDAO;
     b.color = [NSColor greenColor];
     b.buildingName = @"Building 2";
     b.power = [self getBuildingPowerFor:b.buildingName up:NO];
+    b.buildingName = @"Appleton Tower";
     [arrayOfBuildings addObject:b];
     [b release];
 
@@ -54,13 +56,15 @@ static DataDAO *sharedDataDAO;
     b.color = [NSColor yellowColor];
     b.buildingName = @"Building 3";
     b.power = [self getBuildingPowerFor:b.buildingName up:NO];
+    b.buildingName = @"The National Museum of Scotland";
     [arrayOfBuildings addObject:b];
     [b release];
 
     b = [Building alloc];
-    b.color = [NSColor cyanColor];
+    b.color = [NSColor brownColor];
     b.buildingName = @"Building 4";
     b.power = [self getBuildingPowerFor:b.buildingName up:NO];
+    b.buildingName = @"The Traverse";
     [arrayOfBuildings addObject:b];
     [b release];
 
@@ -68,13 +72,15 @@ static DataDAO *sharedDataDAO;
     b.color = [NSColor magentaColor];
     b.buildingName = @"Building 1";
     b.power = [self getBuildingPowerFor:b.buildingName up:YES];
+    b.buildingName = @"The Hub";
     [arrayOfBuildings addObject:b];
     [b release];
     
     b = [Building alloc];
-    b.color = [NSColor whiteColor];
-    b.buildingName = @"Building 3";
+    b.color = [NSColor cyanColor];
+    b.buildingName = @"Building 1";
     b.power = [self getBuildingPowerFor:b.buildingName up:YES];
+    b.buildingName = @"The Pleasance";
     [arrayOfBuildings addObject:b];
     [b release];
     
@@ -106,7 +112,11 @@ return buildingList;
     EGODatabaseRow *first = [result.rows objectAtIndex:0];
     NSString *formattedname = [first stringForColumnIndex:0];
     NSArray *parts = [formattedname componentsSeparatedByString:@", "];
-    return [NSString stringWithFormat:@"%@ %@", [parts objectAtIndex:1], [parts objectAtIndex:0]];
+    if ([parts count] > 1)
+    {
+    return [NSString stringWithFormat:@"%@ %@", [parts objectAtIndex:1], [parts objectAtIndex:0]];        
+    }
+    else return [parts objectAtIndex:0];
 }
 
 - (Item *) getRandomItem {

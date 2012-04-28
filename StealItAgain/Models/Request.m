@@ -45,8 +45,8 @@
 - (id)init {
     self = [super init];
     if (self) {
-        requestDuration = kDefaultRequestDuration;
-        respawnInterval = kRespawnTimeInterval;
+        requestDuration = 5.0f + (arc4random() % 25);// kDefaultRequestDuration;
+        respawnInterval = 5.0f + (arc4random() % 10);// kRespawnTimeInterval;
         requestStartDate = [[NSDate date] retain];
         failTimer = [[NSTimer scheduledTimerWithTimeInterval:requestDuration target:self selector:@selector(failRequest) userInfo:nil repeats:NO] retain];
     }
@@ -55,7 +55,7 @@
 
 - (NSString*)theRequest {
     if (!self.requestCompleted)
-        return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue.buildingName, rewardAmount];
+        return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in %@ for %d", poet, animal, item, venue.buildingName, rewardAmount];
     else {
         return [NSString stringWithFormat:@"%@ the %@ is SO HAPPY. Now you can pay for %@", poet, animal, rewardText];
     }

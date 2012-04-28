@@ -37,7 +37,7 @@
     }
     nextPoliceBuilding.policeArrivalTime = 10.0f;
     nextPoliceBuilding.policeComing = YES;
-    NSLog(@"police move");
+    NSLog(@"police moving to %@", nextPoliceBuilding.buildingName);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -78,7 +78,7 @@
 //    [NSTimer scheduledTimerWithTimeInterval:0.5f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerFundingChanged) name:kPlayerFundingChanged object:nil];
-    [self tappity:nil];
+    //[self tappity:nil];
 }
 
 - (void) grabit:(NSInteger)controller
@@ -119,7 +119,7 @@
     
     if (timeRemaining <= 0.0f) {
         [winLoseScreen setHidden:NO];
-        [winLoseText setStringValue:[NSString stringWithFormat:@"TIME IS UP. YOU GOT £%d OF FUNDING. SCORE", timeRemaining]];
+        [winLoseText setStringValue:[NSString stringWithFormat:@"TIME IS UP. YOU GOT £%d OF FUNDING. SCORE", [[Player sharedPlayer] funding]]];
         [pollTimer invalidate];
         [globeTimer invalidate];
         return;
