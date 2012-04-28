@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047C6090154C198400621DE6 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 047C608F154C198400621DE6 /* Player.m */; };
 		04FA31FD154BDD3E0097A0B8 /* SomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA31FC154BDD3E0097A0B8 /* SomeCell.m */; };
 		04FA3202154BE6290097A0B8 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA3201154BE6290097A0B8 /* Request.m */; };
 		04FA327A154BEB340097A0B8 /* p0000032853.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04FA3205154BEB340097A0B8 /* p0000032853.jpg */; };
@@ -148,6 +149,8 @@
 
 /* Begin PBXFileReference section */
 		047C6085154C109E00621DE6 /* RequestCompleted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCompleted.h; sourceTree = "<group>"; };
+		047C608E154C198400621DE6 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Models/Player.h; sourceTree = "<group>"; };
+		047C608F154C198400621DE6 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Models/Player.m; sourceTree = "<group>"; };
 		04FA31FB154BDD3E0097A0B8 /* SomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeCell.h; sourceTree = "<group>"; };
 		04FA31FC154BDD3E0097A0B8 /* SomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeCell.m; sourceTree = "<group>"; };
 		04FA3200154BE6290097A0B8 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Request.h; path = Models/Request.h; sourceTree = "<group>"; };
@@ -331,6 +334,8 @@
 				B756F0AB154C064E00E771C2 /* Item.m */,
 				B756F0AE154C09C200E771C2 /* Reward.h */,
 				B756F0AF154C09C200E771C2 /* Reward.m */,
+				047C608E154C198400621DE6 /* Player.h */,
+				047C608F154C198400621DE6 /* Player.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -756,6 +761,7 @@
 				04FA32F1154BEEE10097A0B8 /* Building.m in Sources */,
 				B756F0AC154C064E00E771C2 /* Item.m in Sources */,
 				B756F0B0154C09C200E771C2 /* Reward.m in Sources */,
+				047C6090154C198400621DE6 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

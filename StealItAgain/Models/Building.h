@@ -24,4 +24,6 @@
 - (double)powerForT:(NSInteger)t;
 - (Request*)request:(DataDAO *)data;
 
+- (NSString*)policeArrivalTimeAsString;
+
 @end

@@ -35,6 +35,11 @@
     return request;
 }
 
+- (NSString*)policeArrivalTimeAsString {
+    return @"soon!";
+}
+
+
 + (Building*)loadDummyBuilding {
     Building *building = [[Building alloc] init];
     building.buildingId = 1;

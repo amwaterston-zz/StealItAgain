@@ -13,11 +13,13 @@
 #include "SomeCell.h"
 #include "Request.h"
 #include "Building.h"
+#include "Player.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize tableView;
+@synthesize fundingTextField;
 
 - (void)dealloc
 {
@@ -61,13 +63,15 @@
     tableView.rowHeight = 140;
     [tableView reloadData];
     [NSTimer scheduledTimerWithTimeInterval:1.0f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerFundingChanged) name:kPlayerFundingChanged object:nil];
 }
 
 - (void) grabit:(NSInteger)controller
 {
     Building *b = [buildings objectAtIndex:controller];
     Request *r = [b request];
-    [r failRequest];
+    [r completeRequest];
 }
 
 - (void) poll {
@@ -106,6 +110,10 @@
     timeT++;
 }
 
+- (void)playerFundingChanged {
+    fundingTextField.stringValue = [NSString stringWithFormat:@"%d", [[Player sharedPlayer] funding]];
+}
+
 #pragma mark - TableView
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
@@ -139,6 +147,14 @@
         NSTableCellView *pictureCell = [tableView makeViewWithIdentifier:identifier owner:self];
         pictureCell.imageView.objectValue = [NSImage imageNamed:building.request.imageName];
         return pictureCell;
+    } else if ([identifier isEqualToString:@"Reward"]) {
+        NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
+        timeCell.textField.stringValue = [NSString stringWithFormat:@"%d", building.request.rewardAmount];
+        return timeCell;
+    } else if ([identifier isEqualToString:@"PoliceCountdown"]) {
+        NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
+        timeCell.textField.stringValue = building.policeArrivalTimeAsString;
+        return timeCell;
     } else if ([identifier isEqualToString:@"Time"]) {
         NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
         timeCell.textField.stringValue = building.request.timeRemainingAsString;

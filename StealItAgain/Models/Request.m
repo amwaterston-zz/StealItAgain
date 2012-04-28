@@ -10,6 +10,7 @@
 #import "dataDAO.h"
 #import "Item.h"
 #import "Reward.h"
+#import "Player.h"
 
 #define kDefaultRequestDuration 30.0
 
@@ -52,8 +53,11 @@
 }
 
 - (NSString*)timeRemainingAsString {
+    if (self.requestFailed) {
+        return @"Request Failed";
+    }
     if (self.requestFinished) {
-        return @"Request Finished";
+        return @"Request Smashed!";
     }
     return [NSString stringWithFormat:@"%02.0f seconds remaining", [self timeRemaining]];
 }
@@ -64,8 +68,12 @@
 }
 
 - (void)completeRequest {
-    requestCompleted = YES;
-    [delegate requestFinished:self];
+    if (!self.requestFinished) {
+        // TODO - ensure that the police haven't arrived in the building....!
+        [Player sharedPlayer].funding = rewardAmount + [Player sharedPlayer].funding;
+        requestCompleted = YES;
+        [delegate requestFinished:self];
+    }
 }
 
 - (BOOL)requestFinished {

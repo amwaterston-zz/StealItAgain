@@ -26,6 +26,7 @@
 @property (assign) IBOutlet NSWindow *window;
 
 @property (assign) IBOutlet NSTableView *tableView;
+@property (assign) IBOutlet NSTextField *fundingTextField;
 
 - (IBAction)tappity:(id)sender;
 @end
