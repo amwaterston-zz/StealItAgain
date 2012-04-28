@@ -19,6 +19,7 @@
     NSArray *powers;
     
     int timeT;
+    BOOL viewLoaded;
 }
 
 @property (assign) IBOutlet NSWindow *window;

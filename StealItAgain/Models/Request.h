@@ -12,10 +12,11 @@
 
 @property (nonatomic, retain) NSString* poet;
 @property (nonatomic, retain) NSString* animal;
-@property (nonatomic, retain) NSString* glassImageName;
+@property (nonatomic, retain) NSString* venue;
+@property (nonatomic, retain) NSString* item;
+@property (nonatomic, retain) NSString* imageName;
 @property (nonatomic, retain) NSString* rewardText;
 @property (nonatomic, assign) int rewardAmount;
-
 
 +(Request*)loadRandomRequest;
 

@@ -10,8 +10,8 @@
 
 @implementation SomeCell
 
-@synthesize subTitleTextField;
-
+@synthesize box;
+@synthesize building;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -27,5 +27,15 @@
 {
     // Drawing code here.
 }
+
+- (void)setBuilding:(Building *)newBuilding {
+    if (building != newBuilding) {
+        [building release];
+        building = [newBuilding retain];
+        box.fillColor = building.color;
+        self.textField.stringValue = building.buildingName;
+    }
+}
+
 
 @end
