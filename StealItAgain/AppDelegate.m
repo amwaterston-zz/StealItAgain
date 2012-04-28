@@ -84,16 +84,14 @@
     if (!viewLoaded) {
         return 0;
     }
-    return 1;
+    return controllers_connected;
 }
 
 - (NSView*)tableView:(NSTableView *)aTableView viewForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)row {
     
     NSString *identifier = [aTableColumn identifier];
     
-    NSArray *buildings = nil;
     Building *building = [buildings objectAtIndex:row];
-    building = [Building loadDummyBuilding];
 
     if ([identifier isEqualToString:@"Request"]) {
 
