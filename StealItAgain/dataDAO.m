@@ -22,14 +22,22 @@
 
 - (NSArray *) getBuildingPower
 {
-	NSString *query = @"SELECT power.building as building from power WHERE power.usage = 'ELECTRICITY'";
+	NSString *query = @"SELECT * from power WHERE power.usage = 'ELECTRICITY'";
 	
 	EGODatabaseResult* result = [database executeQuery:query];
 	NSMutableArray *buildingList = [NSMutableArray arrayWithCapacity:[result count]];
 	for(EGODatabaseRow* row in result) 
 	{	
-		NSString *building = [row stringForColumn:@"building"];
-		[buildingList addObject:building];
+        for (int i = 0; i < 48; i++) {
+            //double power = [row doubleForColumnIndex:i + 5];
+            //[buildingList addObject:[NSNumber numberWithDouble:power]];
+        }
+        
+        double power = [row doubleForColumn:@"daily_total"];
+        [buildingList addObject:[NSNumber numberWithDouble:power]];
+        
+//		NSString *building = [row stringForColumn:@"building"];
+//		[buildingList addObject:building];
 	}
 	
 	return buildingList;

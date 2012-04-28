@@ -48,10 +48,10 @@
     }
     
     data = [[DataDAO alloc]init];
-    NSArray *array = [data getBuildingPower];
-    for (NSString *blah in array) {
-        NSLog(@"%@", blah);
-    }
+    powers = [[data getBuildingPower] retain];
+    
+    timeT = [powers count] - 1;
+    [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
 }
 
 - (IBAction)tappity:(id)sender {
@@ -60,9 +60,9 @@
         PSMove *move;
         NSValue *v = [moveArray objectAtIndex:i];
         move = [v pointerValue];
-        psmove_set_leds(move, arc4random() % 255, arc4random() % 255, arc4random() % 255);
+        psmove_set_leds(move, [[powers objectAtIndex:timeT] intValue] % 255, 0, 0); //arc4random() % 255, arc4random() % 255);
         psmove_update_leds(move);
     }
-    
+    timeT--;
 }
 @end

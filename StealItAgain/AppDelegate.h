@@ -11,14 +11,15 @@
 #import "dataDAO.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
-    PSMove *moves[6];
-    
     NSMutableArray *moveArray;
     int controllers_connected;
     DataDAO *data;
+    
+    NSArray *powers;
+    
+    int timeT;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 - (IBAction)tappity:(id)sender;
-- (void)createSQLiteDatabase;
 @end
