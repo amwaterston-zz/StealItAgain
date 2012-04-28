@@ -167,7 +167,7 @@
 }
 
 - (void)playerFundingChanged {
-    fundingTextField.stringValue = [NSString stringWithFormat:@"Your Funding Total: %d", [[Player sharedPlayer] funding]];
+    fundingTextField.stringValue = [NSString stringWithFormat:@"Your Funding Total: £%d", [[Player sharedPlayer] funding]];
 }
 
 #pragma mark - TableView
@@ -205,7 +205,7 @@
         return pictureCell;
     } else if ([identifier isEqualToString:@"Reward"]) {
         NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
-        timeCell.textField.stringValue = [NSString stringWithFormat:@"%d", building.request.rewardAmount];
+        timeCell.textField.stringValue = [NSString stringWithFormat:@"£%d", building.request.rewardAmount];
         return timeCell;
     } else if ([identifier isEqualToString:@"PoliceCountdown"]) {
         NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
