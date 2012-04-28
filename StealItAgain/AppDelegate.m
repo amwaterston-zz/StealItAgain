@@ -56,25 +56,53 @@
     timeT = 0;
     
     [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(poll) userInfo:nil repeats:YES];
 	viewLoaded = YES;
     tableView.rowHeight = 140;
     [tableView reloadData];
     [NSTimer scheduledTimerWithTimeInterval:1.0f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
 }
 
+- (void) grabit:(NSInteger)controller
+{
+    Building *b = [buildings objectAtIndex:controller];
+    Request *r = [b request];
+    r.requestFinished = YES;
+    [tableView reloadData];
+}
+
+- (void) poll {
+    for (int i = 0; i < controllers_connected; i++)
+    {
+        PSMove *move;
+        NSValue *v = [moveArray objectAtIndex:i];
+        move = [v pointerValue];
+        
+        psmove_poll(move);
+        if (psmove_get_buttons(move) & Btn_MOVE) 
+        {
+            psmove_set_leds(move, 0, 0, 0);
+            psmove_update_leds(move);
+            [self grabit:i];
+        }
+    }
+}
+
 - (IBAction)tappity:(id)sender {
     for (int i = 0; i < controllers_connected; i++)
     {
         Building *b = [buildings objectAtIndex:i];
-        PSMove *move;
-        NSValue *v = [moveArray objectAtIndex:i];
-        move = [v pointerValue];
-        NSLog(@"power: %d", [[b.power objectAtIndex:timeT % [b.power count]] intValue]);
-        float r = b.color.redComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
-        float g = b.color.greenComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
-        float bl = b.color.blueComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
-        psmove_set_leds(move, r * 255, g * 255, bl * 255); //arc4random() % 255, arc4random() % 255);
-        psmove_update_leds(move);
+        if (!b.request.requestFinished) {
+            PSMove *move;
+            NSValue *v = [moveArray objectAtIndex:i];
+            move = [v pointerValue];
+            //NSLog(@"power: %d", [[b.power objectAtIndex:timeT % [b.power count]] intValue]);
+            float r = b.color.redComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
+            float g = b.color.greenComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
+            float bl = b.color.blueComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
+            psmove_set_leds(move, r * 255, g * 255, bl * 255); //arc4random() % 255, arc4random() % 255);
+            psmove_update_leds(move);
+        }
     }
     timeT++;
 }

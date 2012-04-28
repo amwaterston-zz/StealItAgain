@@ -24,6 +24,7 @@
 @synthesize rewardAmount;
 @synthesize requestStartDate;
 @synthesize requestDuration;
+@synthesize requestFinished;
 
 - (id)init {
     self = [super init];
@@ -35,7 +36,11 @@
 }
 
 - (NSString*)theRequest {
-    return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
+    if (!requestFinished)
+        return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
+    else {
+        return [NSString stringWithFormat:@"%@ the %@ is SO HAPPY. Now you can pay for %@", poet, animal, rewardText];
+    }
 }
 
 - (NSTimeInterval)timeRemaining {
@@ -58,6 +63,7 @@
     request.imageName = i.filename;
     Reward *r = [data getRandomReward];
     request.rewardAmount = r.value;
+    request.rewardText = r.description;
     return [request autorelease];
 }
 

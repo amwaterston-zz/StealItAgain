@@ -20,7 +20,7 @@
 @property (nonatomic, assign) int rewardAmount;
 @property (nonatomic, retain) NSDate *requestStartDate;
 @property (nonatomic, assign) NSTimeInterval requestDuration;
-
+@property (nonatomic, assign) BOOL requestFinished;
 
 +(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name;
 
