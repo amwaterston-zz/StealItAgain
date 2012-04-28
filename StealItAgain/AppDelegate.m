@@ -56,6 +56,9 @@
     timeT = 0;
     
     [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
+	viewLoaded = YES;
+    tableView.rowHeight = 140;
+    [tableView reloadData];
 }
 
 - (IBAction)tappity:(id)sender {
@@ -78,30 +81,35 @@
 #pragma mark - TableView
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
-    return 1;
+    if (!viewLoaded) {
+        return 0;
+    }
+    return controllers_connected;
 }
 
 - (NSView*)tableView:(NSTableView *)aTableView viewForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)row {
     
     NSString *identifier = [aTableColumn identifier];
     
-    Request *request = [Request loadRandomRequest:data];
+    Building *building = [buildings objectAtIndex:row];
 
-    if ([identifier isEqualToString:@"MainCell"]) {
+    if ([identifier isEqualToString:@"Request"]) {
 
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         // Then setup properties on the cellView based on the column
-        cellView.textField.stringValue = [request theRequest];;
+        cellView.textField.stringValue = [building.request theRequest];;
         //cellView.imageView.objectValue = [dictionary objectForKey:@"Image"];
         return cellView;
-    } else if ([identifier isEqualToString:@"Column2"]) {
+    } else if ([identifier isEqualToString:@"Building"]) {
         
         SomeCell *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         // Then setup properties on the cellView based on the column
-        cellView.textField.stringValue = [request animal];
-        cellView.subTitleTextField.stringValue = [request poet];
-        cellView.imageView.objectValue = [NSImage imageNamed:[request glassImageName]];
+        cellView.building = building;
         return cellView;
+    } else if ([identifier isEqualToString:@"Picture"]) {
+        NSTableCellView *pictureCell = [tableView makeViewWithIdentifier:identifier owner:self];
+        pictureCell.imageView.objectValue = [NSImage imageNamed:building.request.imageName];
+        return pictureCell;
     }
     
     return nil;

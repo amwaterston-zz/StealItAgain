@@ -13,19 +13,24 @@
 
 @synthesize poet;
 @synthesize animal;
-@synthesize glassImageName;
+@synthesize venue;
+@synthesize item;
+@synthesize imageName;
 @synthesize rewardText;
 @synthesize rewardAmount;
 
 - (NSString*)theRequest {
-    return [NSString stringWithFormat:@"Grab the %@", animal];
+    return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
 }
 
 +(Request*)loadRandomRequest:(DataDAO *)data {
     Request *request = [[Request alloc] init];
     request.poet = [data getRandomPoet];
     request.animal = [data getRandomAnimal];
-    request.glassImageName = @"p0000033234";
+    request.item = @"Ming Vase";
+    request.venue = @"Underbelly";
+    request.rewardAmount = 42;
+    request.imageName = @"p0000033234";
     return [request autorelease];
 }
 

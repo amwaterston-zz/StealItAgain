@@ -7,11 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Building.h"
 
 @interface SomeCell : NSTableCellView {
-    IBOutlet NSTextField *subTitleTextField;
+    IBOutlet NSBox *box;
 }
 
-@property(assign) NSTextField *subTitleTextField;
+@property(assign) NSBox *box;
+@property(nonatomic, retain) Building *building;
 
 @end
