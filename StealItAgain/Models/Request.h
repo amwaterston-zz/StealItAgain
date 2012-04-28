@@ -18,10 +18,15 @@
 @property (nonatomic, retain) NSString* imageName;
 @property (nonatomic, retain) NSString* rewardText;
 @property (nonatomic, assign) int rewardAmount;
+@property (nonatomic, retain) NSDate *requestStartDate;
+@property (nonatomic, assign) NSTimeInterval requestDuration;
 
 
 +(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name;
 
 - (NSString*)theRequest;
+
+- (NSTimeInterval)timeRemaining;
+- (NSString*)timeRemainingAsString;
 
 @end
