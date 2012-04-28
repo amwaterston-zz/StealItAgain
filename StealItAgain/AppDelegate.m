@@ -12,6 +12,7 @@
 #include "dataDAO.h"
 #include "SomeCell.h"
 #include "Request.h"
+#include "Building.h"
 
 @implementation AppDelegate
 
@@ -51,22 +52,27 @@
     }
     
     data = [[DataDAO alloc]init];
-    powers = [[data getBuildingPower] retain];
+    buildings = [[data getBuildings] retain];
+    timeT = 0;
     
-    timeT = [powers count] - 1;
-    [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
 }
 
 - (IBAction)tappity:(id)sender {
     for (int i = 0; i < controllers_connected; i++)
     {
+        Building *b = [buildings objectAtIndex:i];
         PSMove *move;
         NSValue *v = [moveArray objectAtIndex:i];
         move = [v pointerValue];
-        psmove_set_leds(move, [[powers objectAtIndex:timeT] intValue] % 255, 0, 0); //arc4random() % 255, arc4random() % 255);
+        NSLog(@"power: %d", [[b.power objectAtIndex:timeT % [b.power count]] intValue]);
+        float r = b.color.redComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
+        float g = b.color.greenComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
+        float bl = b.color.blueComponent * ([[b.power objectAtIndex:timeT % [b.power count]] intValue]) / 2600.0f;
+        psmove_set_leds(move, r * 255, g * 255, bl * 255); //arc4random() % 255, arc4random() % 255);
         psmove_update_leds(move);
     }
-    timeT--;
+    timeT++;
 }
 
 #pragma mark - TableView

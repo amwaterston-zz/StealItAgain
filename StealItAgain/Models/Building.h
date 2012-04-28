@@ -13,7 +13,8 @@
 @property (nonatomic, assign) int buildingId;
 @property (nonatomic, retain) NSString* buildingName;
 @property (nonatomic, retain) NSColor* color;
+@property (nonatomic, retain) NSArray* power;
 
-- (int)power;
+- (double)powerForT:(NSInteger)t;
 
 @end

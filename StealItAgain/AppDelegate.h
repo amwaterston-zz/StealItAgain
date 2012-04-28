@@ -16,9 +16,9 @@
     int controllers_connected;
     DataDAO *data;
     
-    NSArray *powers;
-    
     int timeT;
+    
+    NSArray *buildings;
 }
 
 @property (assign) IBOutlet NSWindow *window;

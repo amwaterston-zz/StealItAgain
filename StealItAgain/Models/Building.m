@@ -13,9 +13,10 @@
 @synthesize buildingId;
 @synthesize buildingName;
 @synthesize color;
+@synthesize power;
 
-- (int)power {
-    
+- (double)powerForT:(NSInteger)t {
+    return [[power objectAtIndex:t] doubleValue];
 }
 
 @end

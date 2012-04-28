@@ -7,6 +7,7 @@
 //
 
 #import "DataDAO.h"
+#import "Building.h"
 
 @implementation DataDAO
 
@@ -20,27 +21,73 @@
 	return self;
 }
 
-- (NSArray *) getBuildingPower
+- (NSArray *) getBuildings
 {
-	NSString *query = @"SELECT * from power WHERE power.usage = 'ELECTRICITY'";
-	
-	EGODatabaseResult* result = [database executeQuery:query];
+    NSMutableArray *arrayOfBuildings = [NSMutableArray arrayWithCapacity:7];
+    
+    Building *b = [Building alloc];
+    b.color = [NSColor redColor];
+    b.buildingName = @"Building 1";
+    b.power = [self getBuildingPowerFor:b.buildingName up:NO];
+    [arrayOfBuildings addObject:b];
+    [b release];
+    
+    b = [Building alloc];
+    b.color = [NSColor greenColor];
+    b.buildingName = @"Building 2";
+    b.power = [self getBuildingPowerFor:b.buildingName up:NO];
+    [arrayOfBuildings addObject:b];
+    [b release];
+
+    b = [Building alloc];
+    b.color = [NSColor blueColor];
+    b.buildingName = @"Building 3";
+    b.power = [self getBuildingPowerFor:b.buildingName up:NO];
+    [arrayOfBuildings addObject:b];
+    [b release];
+
+    b = [Building alloc];
+    b.color = [NSColor cyanColor];
+    b.buildingName = @"Building 4";
+    b.power = [self getBuildingPowerFor:b.buildingName up:NO];
+    [arrayOfBuildings addObject:b];
+    [b release];
+
+    b = [Building alloc];
+    b.color = [NSColor magentaColor];
+    b.buildingName = @"Building 1";
+    b.power = [self getBuildingPowerFor:b.buildingName up:YES];
+    [arrayOfBuildings addObject:b];
+    [b release];
+    
+    b = [Building alloc];
+    b.color = [NSColor yellowColor];
+    b.buildingName = @"Building 2";
+    b.power = [self getBuildingPowerFor:b.buildingName up:YES];
+    [arrayOfBuildings addObject:b];
+    [b release];
+    
+    b = [Building alloc];
+    b.color = [NSColor purpleColor];
+    b.buildingName = @"Building 3";
+    b.power = [self getBuildingPowerFor:b.buildingName up:YES];
+    [arrayOfBuildings addObject:b];
+    [b release];
+    
+    return arrayOfBuildings;
+}
+
+-(NSArray *) getBuildingPowerFor:(NSString *)name up:(BOOL)up {
+    NSString *sql = [NSString stringWithFormat:@"Select * from power where power.usage = 'ELECTRICITY' AND power.building = '%@' order by date %@", name, up ? @"asc" : @"desc"];
+    EGODatabaseResult* result = [database executeQuery:sql];
 	NSMutableArray *buildingList = [NSMutableArray arrayWithCapacity:[result count]];
 	for(EGODatabaseRow* row in result) 
 	{	
-        for (int i = 0; i < 48; i++) {
-            //double power = [row doubleForColumnIndex:i + 5];
-            //[buildingList addObject:[NSNumber numberWithDouble:power]];
-        }
-        
         double power = [row doubleForColumn:@"daily_total"];
         [buildingList addObject:[NSNumber numberWithDouble:power]];
-        
-//		NSString *building = [row stringForColumn:@"building"];
-//		[buildingList addObject:building];
-	}
-	
-	return buildingList;
+    }
+    
+return buildingList;
 }
 
 @end
