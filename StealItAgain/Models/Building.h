@@ -16,8 +16,10 @@
 @property (nonatomic, retain) NSString* buildingName;
 @property (nonatomic, retain) NSColor* color;
 @property (nonatomic, retain, readonly) Request* request;
+@property (nonatomic, retain) NSArray* power;
 
 - (void)completeRequest;
 + (Building*)loadDummyBuilding;
+- (double)powerForT:(NSInteger)t;
 
 @end

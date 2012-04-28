@@ -17,6 +17,6 @@
 
 @property (nonatomic, readonly) EGODatabase *database; 
 
-- (NSArray *) getBuildingPower;
+- (NSArray *) getBuildings;
 
 @end

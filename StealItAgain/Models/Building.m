@@ -18,9 +18,14 @@
 @synthesize buildingName;
 @synthesize color;
 @synthesize request;
+@synthesize power;
 
 - (void)completeRequest {
     self.request = nil;
+}
+
+- (double)powerForT:(NSInteger)t {
+    return [[power objectAtIndex:t] doubleValue];
 }
 
 - (Request*)request {
