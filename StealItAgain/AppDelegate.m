@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dataDAO.h"
+#include "SomeCell.h"
 
 @implementation AppDelegate
 
@@ -82,6 +83,14 @@
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         // Then setup properties on the cellView based on the column
         cellView.textField.stringValue = @"Go and get the ming vase";
+        //cellView.imageView.objectValue = [dictionary objectForKey:@"Image"];
+        return cellView;
+    } else if ([identifier isEqualToString:@"Column2"]) {
+        
+        SomeCell *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
+        // Then setup properties on the cellView based on the column
+        cellView.textField.stringValue = @"You really want to get it";
+        cellView.subTitleTextField.stringValue = @"Are you excited?";
         //cellView.imageView.objectValue = [dictionary objectForKey:@"Image"];
         return cellView;
     }

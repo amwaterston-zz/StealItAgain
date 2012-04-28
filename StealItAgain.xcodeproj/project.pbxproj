@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04FA31FD154BDD3E0097A0B8 /* SomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA31FC154BDD3E0097A0B8 /* SomeCell.m */; };
 		B7F5B0F2154B57AC000A114F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F5B0F1154B57AC000A114F /* Cocoa.framework */; };
 		B7F5B0FC154B57AC000A114F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B0FA154B57AC000A114F /* InfoPlist.strings */; };
 		B7F5B0FE154B57AC000A114F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B0FD154B57AC000A114F /* main.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04FA31FB154BDD3E0097A0B8 /* SomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeCell.h; sourceTree = "<group>"; };
+		04FA31FC154BDD3E0097A0B8 /* SomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeCell.m; sourceTree = "<group>"; };
 		B7F5B0ED154B57AC000A114F /* StealItAgain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StealItAgain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F5B0F1154B57AC000A114F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B7F5B0F4154B57AC000A114F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				B7F5B104154B57AC000A114F /* AppDelegate.m */,
 				B7F5B106154B57AC000A114F /* MainMenu.xib */,
 				B7F5B0F8154B57AC000A114F /* Supporting Files */,
+				04FA31FB154BDD3E0097A0B8 /* SomeCell.h */,
+				04FA31FC154BDD3E0097A0B8 /* SomeCell.m */,
 			);
 			path = StealItAgain;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				B7F5B125154B73A7000A114F /* EGODatabaseRequest.m in Sources */,
 				B7F5B126154B73A7000A114F /* EGODatabaseResult.m in Sources */,
 				B7F5B127154B73A7000A114F /* EGODatabaseRow.m in Sources */,
+				04FA31FD154BDD3E0097A0B8 /* SomeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +365,7 @@
 				B7F5B10D154B57AC000A114F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
