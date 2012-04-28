@@ -9,9 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #include "psmove.h"
 #import "dataDAO.h"
-#import "Building.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource, RequestCompleted> {
     
     NSMutableArray *moveArray;
     int controllers_connected;
@@ -28,6 +27,7 @@
 @property (assign) IBOutlet NSWindow *window;
 
 @property (assign) IBOutlet NSTableView *tableView;
+@property (assign) IBOutlet NSTextField *fundingTextField;
 
 - (IBAction)tappity:(id)sender;
 @end

@@ -13,11 +13,13 @@
 #include "SomeCell.h"
 #include "Request.h"
 #include "Building.h"
+#include "Player.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize tableView;
+@synthesize fundingTextField;
 
 - (void)dealloc
 {
@@ -71,6 +73,7 @@
     [tableView reloadData];
     [NSTimer scheduledTimerWithTimeInterval:1.0f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerFundingChanged) name:kPlayerFundingChanged object:nil];
     [self tappity:nil];
 }
 
@@ -81,9 +84,8 @@
         //GAME OVER
     } else {
         Request *r = [b request];
-        r.requestFinished = YES;
-        [tableView reloadData];
-    }
+	    [r completeRequest];    
+	}
 }
 
 - (void) poll {
@@ -138,6 +140,10 @@
     timeT++;
 }
 
+- (void)playerFundingChanged {
+    fundingTextField.stringValue = [NSString stringWithFormat:@"%d", [[Player sharedPlayer] funding]];
+}
+
 #pragma mark - TableView
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
@@ -152,6 +158,7 @@
     NSString *identifier = [aTableColumn identifier];
     
     Building *building = [buildings objectAtIndex:row];
+    building.request.delegate = self;
 
     if ([identifier isEqualToString:@"Request"]) {
 
@@ -170,6 +177,14 @@
         NSTableCellView *pictureCell = [tableView makeViewWithIdentifier:identifier owner:self];
         pictureCell.imageView.objectValue = [NSImage imageNamed:building.request.imageName];
         return pictureCell;
+    } else if ([identifier isEqualToString:@"Reward"]) {
+        NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
+        timeCell.textField.stringValue = [NSString stringWithFormat:@"%d", building.request.rewardAmount];
+        return timeCell;
+    } else if ([identifier isEqualToString:@"PoliceCountdown"]) {
+        NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
+        timeCell.textField.stringValue = building.policeArrivalTimeAsString;
+        return timeCell;
     } else if ([identifier isEqualToString:@"Time"]) {
         NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
         timeCell.textField.stringValue = building.request.timeRemainingAsString;
@@ -178,5 +193,10 @@
     
     return nil;
 }
+
+- (void)requestFinished:(Request*)request {
+    [tableView reloadData];
+}
+
 
 @end

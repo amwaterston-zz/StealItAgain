@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RequestCompleted.h"
 
 @class DataDAO;
 @interface Request : NSObject
 
+@property (nonatomic, assign) NSObject<RequestCompleted> *delegate;
 @property (nonatomic, retain) NSString* poet;
 @property (nonatomic, retain) NSString* animal;
 @property (nonatomic, retain) NSString* venue;
@@ -20,7 +22,9 @@
 @property (nonatomic, assign) int rewardAmount;
 @property (nonatomic, retain) NSDate *requestStartDate;
 @property (nonatomic, assign) NSTimeInterval requestDuration;
-@property (nonatomic, assign) BOOL requestFinished;
+@property (nonatomic, assign, readonly) BOOL requestCompleted;
+@property (nonatomic, assign, readonly) BOOL requestFailed;
+@property (nonatomic, assign, readonly) BOOL requestFinished;
 
 +(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name;
 
@@ -28,5 +32,8 @@
 
 - (NSTimeInterval)timeRemaining;
 - (NSString*)timeRemainingAsString;
+
+- (void)failRequest;
+- (void)completeRequest;
 
 @end
