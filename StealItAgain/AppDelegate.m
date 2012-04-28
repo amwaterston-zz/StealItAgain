@@ -85,7 +85,7 @@
     
     NSString *identifier = [aTableColumn identifier];
     
-    Request *request = [Request loadRandomRequest];
+    Request *request = [Request loadRandomRequest:data];
 
     if ([identifier isEqualToString:@"MainCell"]) {
 

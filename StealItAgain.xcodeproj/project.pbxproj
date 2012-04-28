@@ -127,6 +127,7 @@
 		04FA32ED154BEB340097A0B8 /* p0000035880.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04FA3278154BEB340097A0B8 /* p0000035880.jpg */; };
 		04FA32EE154BEB340097A0B8 /* p0000035881.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04FA3279154BEB340097A0B8 /* p0000035881.jpg */; };
 		04FA32F1154BEEE10097A0B8 /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA32F0154BEEE10097A0B8 /* Building.m */; };
+		B756F0AC154C064E00E771C2 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = B756F0AB154C064E00E771C2 /* Item.m */; };
 		B7F5B0F2154B57AC000A114F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F5B0F1154B57AC000A114F /* Cocoa.framework */; };
 		B7F5B0FC154B57AC000A114F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B0FA154B57AC000A114F /* InfoPlist.strings */; };
 		B7F5B0FE154B57AC000A114F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B0FD154B57AC000A114F /* main.m */; };
@@ -268,6 +269,8 @@
 		04FA3279154BEB340097A0B8 /* p0000035881.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = p0000035881.jpg; path = "Images/chs2012-nms-glass/p0000035881.jpg"; sourceTree = "<group>"; };
 		04FA32EF154BEEE10097A0B8 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Building.h; path = Models/Building.h; sourceTree = "<group>"; };
 		04FA32F0154BEEE10097A0B8 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Building.m; path = Models/Building.m; sourceTree = "<group>"; };
+		B756F0AA154C064D00E771C2 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		B756F0AB154C064E00E771C2 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		B7F5B0ED154B57AC000A114F /* StealItAgain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StealItAgain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F5B0F1154B57AC000A114F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B7F5B0F4154B57AC000A114F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -320,6 +323,8 @@
 				04FA3201154BE6290097A0B8 /* Request.m */,
 				04FA32EF154BEEE10097A0B8 /* Building.h */,
 				04FA32F0154BEEE10097A0B8 /* Building.m */,
+				B756F0AA154C064D00E771C2 /* Item.h */,
+				B756F0AB154C064E00E771C2 /* Item.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				04FA31FD154BDD3E0097A0B8 /* SomeCell.m in Sources */,
 				04FA3202154BE6290097A0B8 /* Request.m in Sources */,
 				04FA32F1154BEEE10097A0B8 /* Building.m in Sources */,
+				B756F0AC154C064E00E771C2 /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

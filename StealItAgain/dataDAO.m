@@ -8,6 +8,7 @@
 
 #import "DataDAO.h"
 #import "Building.h"
+#import "Item.h"
 
 @implementation DataDAO
 
@@ -88,6 +89,40 @@
     }
     
 return buildingList;
+}
+
+- (NSString *) getRandomAnimal {
+    EGODatabaseResult* result = [database executeQuery:@"Select common_name from animals ORDER BY random() LIMIT 1"];
+    
+    EGODatabaseRow *first = [result.rows objectAtIndex:0];
+    return [first stringForColumnIndex:0];
+}
+
+- (NSString *) getRandomPoet {
+    EGODatabaseResult* result = [database executeQuery:@"Select formatted_name from poets ORDER BY random() LIMIT 1"];
+    EGODatabaseRow *first = [result.rows objectAtIndex:0];
+    NSString *formattedname = [first stringForColumnIndex:0];
+    NSArray *parts = [formattedname componentsSeparatedByString:@", "];
+    return [NSString stringWithFormat:@"%@ %@", [parts objectAtIndex:1], [parts objectAtIndex:0]];
+}
+
+- (Item *) getRandomItem {
+    EGODatabaseResult* result = [database executeQuery:@"Select object_name, description, file_name from glass ORDER BY random() LIMIT 1"];
+    
+    EGODatabaseRow *first = [result.rows objectAtIndex:0];
+    Item *item = [Item alloc];
+    
+    item.name = [first stringForColumnIndex:0];
+    item.description = [first stringForColumnIndex:1];
+    item.filename = [first stringForColumnIndex:2];
+    return [item autorelease];
+}
+
+- (NSString *) getRandomReward {
+    EGODatabaseResult* result = [database executeQuery:@"Select common_name from animals ORDER BY random() LIMIT 1"];
+    
+    EGODatabaseRow *first = [result.rows objectAtIndex:0];
+    return [first stringForColumnIndex:0];
 }
 
 @end

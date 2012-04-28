@@ -7,6 +7,7 @@
 //
 
 #import "Request.h"
+#import "dataDAO.h"
 
 @implementation Request
 
@@ -20,10 +21,10 @@
     return [NSString stringWithFormat:@"Grab the %@", animal];
 }
 
-+(Request*)loadRandomRequest {
++(Request*)loadRandomRequest:(DataDAO *)data {
     Request *request = [[Request alloc] init];
-    request.poet = @"Rabbie Burns";
-    request.animal = @"A dead bird";
+    request.poet = [data getRandomPoet];
+    request.animal = [data getRandomAnimal];
     request.glassImageName = @"p0000033234";
     return [request autorelease];
 }

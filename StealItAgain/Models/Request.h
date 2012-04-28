@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class DataDAO;
 @interface Request : NSObject
 
 @property (nonatomic, retain) NSString* poet;
@@ -17,7 +18,7 @@
 @property (nonatomic, assign) int rewardAmount;
 
 
-+(Request*)loadRandomRequest;
++(Request*)loadRandomRequest:(DataDAO*)data;
 
 - (NSString*)theRequest;
 
