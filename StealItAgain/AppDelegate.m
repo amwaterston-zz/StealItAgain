@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include "dataDAO.h"
 #include "SomeCell.h"
+#include "Request.h"
 
 @implementation AppDelegate
 
@@ -77,21 +78,23 @@
 - (NSView*)tableView:(NSTableView *)aTableView viewForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)row {
     
     NSString *identifier = [aTableColumn identifier];
+    
+    Request *request = [Request loadRandomRequest];
 
     if ([identifier isEqualToString:@"MainCell"]) {
 
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         // Then setup properties on the cellView based on the column
-        cellView.textField.stringValue = @"Go and get the ming vase";
+        cellView.textField.stringValue = [request theRequest];;
         //cellView.imageView.objectValue = [dictionary objectForKey:@"Image"];
         return cellView;
     } else if ([identifier isEqualToString:@"Column2"]) {
         
         SomeCell *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
         // Then setup properties on the cellView based on the column
-        cellView.textField.stringValue = @"You really want to get it";
-        cellView.subTitleTextField.stringValue = @"Are you excited?";
-        //cellView.imageView.objectValue = [dictionary objectForKey:@"Image"];
+        cellView.textField.stringValue = [request animal];
+        cellView.subTitleTextField.stringValue = [request poet];
+        cellView.imageView.objectValue = [NSImage imageNamed:[request glassImageName]];
         return cellView;
     }
     
