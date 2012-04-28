@@ -55,11 +55,11 @@
     buildings = [[data getBuildings] retain];
     timeT = 0;
     
-    [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(tappity:) userInfo:nil repeats:YES];
 	viewLoaded = YES;
     tableView.rowHeight = 140;
     [tableView reloadData];
-    [NSTimer scheduledTimerWithTimeInterval:10.0f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1.0f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
 }
 
 - (IBAction)tappity:(id)sender {

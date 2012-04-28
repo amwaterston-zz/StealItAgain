@@ -11,7 +11,7 @@
 #import "Item.h"
 #import "Reward.h"
 
-#define kDefaultRequestDuration 120.0
+#define kDefaultRequestDuration 30.0
 
 @implementation Request
 
@@ -35,10 +35,20 @@
 }
 
 - (NSString*)theRequest {
-    return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in %@ for %d", poet, animal, item, venue, rewardAmount];
+    return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
 }
 
-+(Request*)loadRandomRequest {
+- (NSTimeInterval)timeRemaining {
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:requestStartDate];
+    return requestDuration - timeInterval;
+}
+
+- (NSString*)timeRemainingAsString {
+    return [NSString stringWithFormat:@"%02.0f seconds remaining", [self timeRemaining]];
+}
+
+
++(Request*)loadRandomRequest:(DataDAO *)data withBuilding:(NSString *)name {
     Request *request = [[Request alloc] init];
     request.poet = [data getRandomPoet];
     request.animal = [data getRandomAnimal];
