@@ -31,9 +31,9 @@
 
 - (void) movePolice {
     Building *nextPoliceBuilding;
-    nextPoliceBuilding = [buildings objectAtIndex:arc4random() % [buildings count]];
+    nextPoliceBuilding = [buildings objectAtIndex:arc4random() % controllers_connected];
     while (nextPoliceBuilding == currentPoliceBuilding) {
-        nextPoliceBuilding = [buildings objectAtIndex:arc4random() % [buildings count]];
+        nextPoliceBuilding = [buildings objectAtIndex:arc4random() % controllers_connected];
     }
     nextPoliceBuilding.policeArrivalTime = 10.0f;
     nextPoliceBuilding.policeComing = YES;
@@ -134,15 +134,19 @@
         move = [v pointerValue];
         
         if (b.policeComing) {
+            NSLog(@"The police are coming!");
             b.policeArrivalTime -= 0.5f;
             if (b.policeArrivalTime <= 0.0f) {
-                b.police = YES;
-                b.policeComing = NO;
-                currentPoliceBuilding.police = NO;
-                currentPoliceBuilding.policeComing = NO;
-                currentPoliceBuilding = b;
-                [self movePolice];
+                @synchronized(self) {
+                    b.police = YES;
+                    b.policeComing = NO;
+                    currentPoliceBuilding.police = NO;
+                    currentPoliceBuilding = b;
+                    [self movePolice];
+                }
             }
+        } else {
+            NSLog(@"The police aren't coming to %@", b.buildingName);
         }
         
         if (b.police) {
