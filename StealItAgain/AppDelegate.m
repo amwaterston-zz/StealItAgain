@@ -71,7 +71,7 @@
 	viewLoaded = YES;
     tableView.rowHeight = 140;
     [tableView reloadData];
-    [NSTimer scheduledTimerWithTimeInterval:1.0f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:0.5f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerFundingChanged) name:kPlayerFundingChanged object:nil];
     [self tappity:nil];
@@ -138,6 +138,8 @@
         }
     }
     timeT++;
+    
+    [tableView reloadData];
 }
 
 - (void)playerFundingChanged {

@@ -9,6 +9,9 @@
 #import <Cocoa/Cocoa.h>
 #include "psmove.h"
 #import "dataDAO.h"
+#import "RequestCompleted.h"
+
+@class Building;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource, RequestCompleted> {
     

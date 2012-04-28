@@ -39,7 +39,13 @@
 }
 
 - (NSString*)policeArrivalTimeAsString {
-    return @"soon!";
+    if (police) {
+        return @"POLICE!";
+    } else if (policeComing) {
+        return [NSString stringWithFormat:@"In %02.0f seconds", policeArrivalTime];
+    } else {
+        return @"Smash on!";
+    }
 }
 
 
