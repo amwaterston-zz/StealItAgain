@@ -8,12 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #include "psmove.h"
+#import "dataDAO.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource> {
     PSMove *moves[6];
     
     NSMutableArray *moveArray;
     int controllers_connected;
+    DataDAO *data;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -21,5 +23,5 @@
 @property (assign) IBOutlet NSTableView *tableView;
 
 - (IBAction)tappity:(id)sender;
-
+- (void)createSQLiteDatabase;
 @end

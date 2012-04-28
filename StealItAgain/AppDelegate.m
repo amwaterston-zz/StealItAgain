@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "dataDAO.h"
 
 @implementation AppDelegate
 
@@ -45,6 +46,12 @@
         NSValue *v = [moveArray objectAtIndex:i];
         PSMove *move = [v pointerValue];
         psmove_set_leds(move, 255, 0, 0);
+    }
+    
+    data = [[DataDAO alloc]init];
+    NSArray *array = [data getBuildingPower];
+    for (NSString *blah in array) {
+        NSLog(@"%@", blah);
     }
 }
 
