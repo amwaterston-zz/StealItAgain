@@ -1497,6 +1497,7 @@
 													<reference key="NSTableView" ref="305392380"/>
 												</object>
 												<object class="NSTableColumn" id="509545933">
+													<string key="NSIdentifier">Time</string>
 													<double key="NSWidth">233</double>
 													<double key="NSMinWidth">10</double>
 													<double key="NSMaxWidth">3.4028234663852886e+38</double>

@@ -59,6 +59,7 @@
 	viewLoaded = YES;
     tableView.rowHeight = 140;
     [tableView reloadData];
+    [NSTimer scheduledTimerWithTimeInterval:10.0f target:tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
 }
 
 - (IBAction)tappity:(id)sender {
@@ -110,6 +111,10 @@
         NSTableCellView *pictureCell = [tableView makeViewWithIdentifier:identifier owner:self];
         pictureCell.imageView.objectValue = [NSImage imageNamed:building.request.imageName];
         return pictureCell;
+    } else if ([identifier isEqualToString:@"Time"]) {
+        NSTableCellView *timeCell = [tableView makeViewWithIdentifier:identifier owner:self];
+        timeCell.textField.stringValue = building.request.timeRemainingAsString;
+        return timeCell;
     }
     
     return nil;

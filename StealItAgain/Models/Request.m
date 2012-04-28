@@ -8,6 +8,8 @@
 
 #import "Request.h"
 
+#define kDefaultRequestDuration 120.0
+
 @implementation Request
 
 @synthesize poet;
@@ -17,9 +19,29 @@
 @synthesize imageName;
 @synthesize rewardText;
 @synthesize rewardAmount;
+@synthesize requestStartDate;
+@synthesize requestDuration;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        requestDuration = kDefaultRequestDuration;
+        requestStartDate = [[NSDate date] retain];
+    }
+    return self;
+}
 
 - (NSString*)theRequest {
     return [NSString stringWithFormat:@"%@ the %@ says smash the %@ in the %@ for %d", poet, animal, item, venue, rewardAmount];
+}
+
+- (NSTimeInterval)timeRemaining {
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:requestStartDate];
+    return requestDuration - timeInterval;
+}
+
+- (NSString*)timeRemainingAsString {
+    return [NSString stringWithFormat:@"%02.0f seconds remaining", [self timeRemaining]];
 }
 
 +(Request*)loadRandomRequest {

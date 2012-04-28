@@ -17,9 +17,14 @@
 @property (nonatomic, retain) NSString* imageName;
 @property (nonatomic, retain) NSString* rewardText;
 @property (nonatomic, assign) int rewardAmount;
+@property (nonatomic, retain) NSDate *requestStartDate;
+@property (nonatomic, assign) NSTimeInterval requestDuration;
 
 +(Request*)loadRandomRequest;
 
 - (NSString*)theRequest;
+
+- (NSTimeInterval)timeRemaining;
+- (NSString*)timeRemainingAsString;
 
 @end
