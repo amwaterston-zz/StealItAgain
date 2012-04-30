@@ -1,10 +1,12 @@
+Smash It!
+=========
 
-Steal It Again
-==============
+Originally this was called StealItAgain for obvious reasons - turns out smashing is even more fun that stealing.
 
-This is your chance to steal it. Again.
+This src does not include the required data - a picture of a lego man and a bunch of images for the glass objects at NMS.
 
-You have never been so *excited*
+You will need a number of Move Controllers to play - it enters an infinite loop if you have less than 2 connected so don't do that.
 
+We will tidy things up over the next week or so and maybe run a big old playtest of it once it's actually fun. We have some ideas about how to make it fun because, at the moment, to be honest, it isn't really.
 
-
+Alex and Nick
